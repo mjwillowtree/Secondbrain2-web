@@ -40,7 +40,9 @@ export function TreeNode({
         className={cn(
           "flex w-full items-center gap-1.5 rounded-md px-2 py-[6px] text-left text-[13px] transition-colors hover:bg-accent",
           isSelected &&
-            "bg-primary/10 text-primary font-medium border-l-2 border-primary"
+            "bg-primary/10 text-primary font-medium border-l-2 border-primary",
+          isDirectory && isExpanded && !isSelected &&
+            "bg-primary/5 text-primary font-medium"
         )}
         style={{ paddingLeft: `${depth * 20 + 8}px` }}
         data-testid={`tree-node-${node.path}`}

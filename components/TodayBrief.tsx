@@ -4,11 +4,14 @@ import { useState, useEffect } from "react";
 import type { TodayBrief as TodayBriefType } from "@/lib/types";
 import { MeetingCard } from "./MeetingCard";
 import { PersonCard } from "./PersonCard";
-import { Calendar, Users, Sun } from "lucide-react";
+import { Calendar, Users, Sun, ChevronDown } from "lucide-react";
+
+const INITIAL_PEOPLE_SHOWN = 5;
 
 export function TodayBrief() {
   const [brief, setBrief] = useState<TodayBriefType | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showAllPeople, setShowAllPeople] = useState(false);
 
   useEffect(() => {
     fetch("/api/today")
@@ -87,11 +90,25 @@ export function TodayBrief() {
             Everyone&apos;s up to date. No overdue contacts.
           </p>
         ) : (
-          <div className="space-y-3">
-            {brief.peopleSuggestions.map((person) => (
-              <PersonCard key={person.name} person={person} />
-            ))}
-          </div>
+          <>
+            <div className="space-y-3">
+              {(showAllPeople
+                ? brief.peopleSuggestions
+                : brief.peopleSuggestions.slice(0, INITIAL_PEOPLE_SHOWN)
+              ).map((person) => (
+                <PersonCard key={person.name} person={person} />
+              ))}
+            </div>
+            {brief.peopleSuggestions.length > INITIAL_PEOPLE_SHOWN && !showAllPeople && (
+              <button
+                onClick={() => setShowAllPeople(true)}
+                className="flex items-center gap-1.5 mt-3 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ChevronDown className="h-3 w-3" />
+                Show {brief.peopleSuggestions.length - INITIAL_PEOPLE_SHOWN} more
+              </button>
+            )}
+          </>
         )}
       </section>
     </div>
