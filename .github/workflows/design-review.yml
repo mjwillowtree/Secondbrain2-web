@@ -16,6 +16,7 @@ jobs:
     env:
       REPO_ROOT: ./tests/fixtures
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
     steps:
       - uses: actions/checkout@v6
 
