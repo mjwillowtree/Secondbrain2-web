@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FolderTree, Bot } from "lucide-react";
+import { FolderTree, Bot, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { href: "/today", label: "Today", icon: Sun },
   { href: "/", label: "Explorer", icon: FolderTree },
   { href: "/automations", label: "Automations", icon: Bot },
 ];

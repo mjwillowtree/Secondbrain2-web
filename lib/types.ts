@@ -25,3 +25,28 @@ export interface Automation {
   recentLogs: string | null;
   deleteInstruction: string;
 }
+
+export interface MeetingPrep {
+  title: string;
+  time: string;
+  filename: string;
+  path: string;
+  content: string;
+}
+
+export interface PersonSuggestion {
+  name: string;
+  role: string;
+  priority: "invest" | "maintain" | "monitor";
+  cadence: string;
+  lastContact: string;
+  daysOverdue: number;
+  recentTopics: string[];
+  profilePath: string;
+}
+
+export interface TodayBrief {
+  date: string;
+  meetings: MeetingPrep[];
+  peopleSuggestions: PersonSuggestion[];
+}
