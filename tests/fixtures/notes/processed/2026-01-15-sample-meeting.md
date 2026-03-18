@@ -3,7 +3,7 @@ title: Sample Project Meeting
 date: 2026-01-15
 processed: true
 type: project
-project: Ascensus
+project: Acme Corp
 topics: [architecture, timeline]
 tickets: N/A
 attendees: [Michael Chapman, Jane Smith]

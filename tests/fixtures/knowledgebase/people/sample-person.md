@@ -10,7 +10,7 @@ priority: invest
 
 ## Overview
 
-Jane is a senior developer on the Ascensus project. She leads the frontend team.
+Jane is a senior developer on the Acme Corp project. She leads the frontend team.
 
 ## Key Conversations
 
