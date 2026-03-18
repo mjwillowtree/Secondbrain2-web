@@ -12,7 +12,7 @@ jobs:
     env:
       REPO_ROOT: ./tests/fixtures
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v5
         with:
@@ -30,7 +30,7 @@ jobs:
     env:
       REPO_ROOT: ./tests/fixtures
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v5
         with:
