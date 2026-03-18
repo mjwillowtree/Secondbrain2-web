@@ -1,0 +1,1 @@
+Fetch today's calendar events and create meeting prep notes for each upcoming meeting. Skip any meetings that already have prep files.
