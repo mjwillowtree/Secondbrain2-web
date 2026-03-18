@@ -51,7 +51,7 @@ export function FileExplorer({ tree }: FileExplorerProps) {
   return (
     <div data-testid="file-explorer" className="grid grid-cols-[260px_1fr] h-[calc(100vh-49px)]">
       {/* Left panel — directory tree */}
-      <div className="border-r bg-card/50 flex flex-col">
+      <div className="border-r bg-muted/40 flex flex-col">
         <ScrollArea className="flex-1">
           <DirectoryTree
             tree={tree}
