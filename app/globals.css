@@ -132,9 +132,15 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   }
   html {
     @apply font-sans;
   }
+}
+
+/* Applied outside @layer so it has higher specificity than Tailwind base.
+   var(--font-geist-sans) is set by Next.js font loader classes on <body>
+   and is not available inside @layer base during CSS compilation. */
+body {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
