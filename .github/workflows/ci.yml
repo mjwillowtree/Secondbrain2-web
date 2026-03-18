@@ -50,3 +50,25 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+  lighthouse:
+    needs: lint-typecheck-build
+    runs-on: ubuntu-latest
+    env:
+      REPO_ROOT: ./tests/fixtures
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Run Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          uploadArtifacts: true
+          configPath: ./lighthouserc.json
