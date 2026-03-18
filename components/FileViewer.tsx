@@ -1,3 +1,4 @@
+// File viewer — displays selected file content with frontmatter badges
 "use client";
 
 import type { FileContent } from "@/lib/types";
