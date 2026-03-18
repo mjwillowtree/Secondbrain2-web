@@ -41,7 +41,7 @@ test.describe("File viewer", () => {
     // Should show processed: true badge
     await expect(page.getByText("processed: true")).toBeVisible();
     // Should show project badge
-    await expect(page.getByText("project: Ascensus")).toBeVisible();
+    await expect(page.getByText("project: Acme Corp")).toBeVisible();
   });
 
   test("displays raw text files without markdown rendering", async ({
@@ -55,7 +55,7 @@ test.describe("File viewer", () => {
 
     await expect(page.getByTestId("file-viewer")).toBeVisible();
     await expect(
-      page.getByText("Quick call with Tyler")
+      page.getByText("Quick call with James")
     ).toBeVisible();
   });
 
