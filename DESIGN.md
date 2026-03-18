@@ -1,5 +1,7 @@
 # Secondbrain2 Web — Design Specification
 
+> Last updated: 2026-03-18
+
 ## Assumed Context
 
 - **Purpose:** Personal knowledge base explorer + automation dashboard — a daily-use tool
