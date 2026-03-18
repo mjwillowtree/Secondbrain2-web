@@ -37,6 +37,7 @@ test.describe("Directory tree navigation", () => {
   test("navigates into nested directories", async ({ page }) => {
     // Expand notes > processed
     await page.getByTestId("tree-node-notes").click();
+    await expect(page.getByTestId("tree-node-notes/processed")).toBeVisible();
     await page.getByTestId("tree-node-notes/processed").click();
 
     // Should see the sample meeting file

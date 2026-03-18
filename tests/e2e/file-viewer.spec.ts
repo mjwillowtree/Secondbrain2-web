@@ -8,11 +8,13 @@ test.describe("File viewer", () => {
   test("displays file content when a file is clicked", async ({ page }) => {
     // Navigate to the sample meeting file
     await page.getByTestId("tree-node-notes").click();
+    await expect(page.getByTestId("tree-node-notes/processed")).toBeVisible();
     await page.getByTestId("tree-node-notes/processed").click();
+    await expect(
+      page.getByTestId("tree-node-notes/processed/2026-01-15-sample-meeting.md")
+    ).toBeVisible();
     await page
-      .getByTestId(
-        "tree-node-notes/processed/2026-01-15-sample-meeting.md"
-      )
+      .getByTestId("tree-node-notes/processed/2026-01-15-sample-meeting.md")
       .click();
 
     // File viewer should appear with content
@@ -30,11 +32,13 @@ test.describe("File viewer", () => {
     page,
   }) => {
     await page.getByTestId("tree-node-notes").click();
+    await expect(page.getByTestId("tree-node-notes/processed")).toBeVisible();
     await page.getByTestId("tree-node-notes/processed").click();
+    await expect(
+      page.getByTestId("tree-node-notes/processed/2026-01-15-sample-meeting.md")
+    ).toBeVisible();
     await page
-      .getByTestId(
-        "tree-node-notes/processed/2026-01-15-sample-meeting.md"
-      )
+      .getByTestId("tree-node-notes/processed/2026-01-15-sample-meeting.md")
       .click();
 
     await expect(page.getByTestId("frontmatter-badges")).toBeVisible();
@@ -48,7 +52,11 @@ test.describe("File viewer", () => {
     page,
   }) => {
     await page.getByTestId("tree-node-notes").click();
+    await expect(page.getByTestId("tree-node-notes/raw")).toBeVisible();
     await page.getByTestId("tree-node-notes/raw").click();
+    await expect(
+      page.getByTestId("tree-node-notes/raw/2026-01-20-unprocessed.md")
+    ).toBeVisible();
     await page
       .getByTestId("tree-node-notes/raw/2026-01-20-unprocessed.md")
       .click();
@@ -61,11 +69,13 @@ test.describe("File viewer", () => {
 
   test("updates breadcrumb when file is selected", async ({ page }) => {
     await page.getByTestId("tree-node-notes").click();
+    await expect(page.getByTestId("tree-node-notes/processed")).toBeVisible();
     await page.getByTestId("tree-node-notes/processed").click();
+    await expect(
+      page.getByTestId("tree-node-notes/processed/2026-01-15-sample-meeting.md")
+    ).toBeVisible();
     await page
-      .getByTestId(
-        "tree-node-notes/processed/2026-01-15-sample-meeting.md"
-      )
+      .getByTestId("tree-node-notes/processed/2026-01-15-sample-meeting.md")
       .click();
 
     const breadcrumb = page.getByTestId("breadcrumb");
@@ -76,7 +86,11 @@ test.describe("File viewer", () => {
 
   test("displays people profile with frontmatter", async ({ page }) => {
     await page.getByTestId("tree-node-knowledgebase").click();
+    await expect(page.getByTestId("tree-node-knowledgebase/people")).toBeVisible();
     await page.getByTestId("tree-node-knowledgebase/people").click();
+    await expect(
+      page.getByTestId("tree-node-knowledgebase/people/sample-person.md")
+    ).toBeVisible();
     await page
       .getByTestId("tree-node-knowledgebase/people/sample-person.md")
       .click();

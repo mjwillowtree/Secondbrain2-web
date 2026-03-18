@@ -49,12 +49,9 @@ export function FileExplorer({ tree }: FileExplorerProps) {
   }, []);
 
   return (
-    <div data-testid="file-explorer" className="grid grid-cols-[280px_1fr] h-screen">
+    <div data-testid="file-explorer" className="grid grid-cols-[280px_1fr] h-[calc(100vh-49px)]">
       {/* Left panel — directory tree */}
       <div className="border-r flex flex-col">
-        <div className="px-4 py-3 border-b">
-          <h2 className="text-sm font-semibold text-foreground">Secondbrain2</h2>
-        </div>
         <ScrollArea className="flex-1">
           <DirectoryTree
             tree={tree}

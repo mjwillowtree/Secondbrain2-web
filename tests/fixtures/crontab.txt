@@ -1,0 +1,2 @@
+# Meeting prep — creates prep notes for upcoming meetings
+7 * * * 1-5 scripts/meeting-prep.sh
