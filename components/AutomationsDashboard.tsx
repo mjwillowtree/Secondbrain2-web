@@ -24,7 +24,7 @@ export function AutomationsDashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-[60vh] text-muted-foreground">
-        <div className="animate-pulse">Loading automations...</div>
+        <div className="animate-pulse text-sm">Loading automations...</div>
       </div>
     );
   }
@@ -32,7 +32,7 @@ export function AutomationsDashboard() {
   if (error) {
     return (
       <div className="flex items-center justify-center h-[60vh] text-destructive">
-        <p>Error: {error}</p>
+        <p className="text-sm">Error: {error}</p>
       </div>
     );
   }
@@ -43,23 +43,23 @@ export function AutomationsDashboard() {
         data-testid="no-automations"
         className="flex flex-col items-center justify-center h-[60vh] gap-3 text-muted-foreground"
       >
-        <Bot className="h-12 w-12" />
-        <p className="text-lg">No automations found</p>
+        <Bot className="h-12 w-12 opacity-30" />
+        <p className="text-base">No automations found</p>
         <p className="text-sm">
           Create one with Claude:{" "}
-          <code className="bg-muted px-2 py-1 rounded text-xs">/new-cron-job</code>
+          <code className="bg-muted border border-border px-2 py-0.5 rounded text-xs font-mono">/new-cron-job</code>
         </p>
       </div>
     );
   }
 
   return (
-    <div data-testid="automations-dashboard" className="p-6 max-w-3xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Automations</h1>
-        <p className="text-sm text-muted-foreground">
+    <div data-testid="automations-dashboard" className="p-8 max-w-[720px] mx-auto space-y-4">
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-xl font-semibold tracking-tight">Automations</h1>
+        <p className="text-[13px] text-muted-foreground">
           Create new:{" "}
-          <code className="bg-muted px-2 py-1 rounded text-xs">/new-cron-job</code>
+          <code className="bg-muted border border-border px-2 py-0.5 rounded text-xs font-mono">/new-cron-job</code>
         </p>
       </div>
       {automations.map((automation) => (

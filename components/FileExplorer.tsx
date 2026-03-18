@@ -49,9 +49,9 @@ export function FileExplorer({ tree }: FileExplorerProps) {
   }, []);
 
   return (
-    <div data-testid="file-explorer" className="grid grid-cols-[280px_1fr] h-[calc(100vh-49px)]">
+    <div data-testid="file-explorer" className="grid grid-cols-[260px_1fr] h-[calc(100vh-49px)]">
       {/* Left panel — directory tree */}
-      <div className="border-r flex flex-col">
+      <div className="border-r bg-card/50 flex flex-col">
         <ScrollArea className="flex-1">
           <DirectoryTree
             tree={tree}
