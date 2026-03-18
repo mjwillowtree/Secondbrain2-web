@@ -9,7 +9,10 @@ interface MarkdownRendererProps {
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
   return (
-    <div data-testid="markdown-content" className="prose prose-sm dark:prose-invert max-w-none">
+    <div
+      data-testid="markdown-content"
+      className="prose prose-sm dark:prose-invert max-w-[72ch] prose-headings:tracking-tight prose-headings:font-semibold prose-code:font-mono prose-code:text-[13px] prose-pre:bg-muted/50 prose-pre:border prose-pre:border-border"
+    >
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
     </div>
   );
