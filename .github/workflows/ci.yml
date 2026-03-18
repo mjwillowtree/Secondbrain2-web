@@ -12,9 +12,9 @@ jobs:
     env:
       REPO_ROOT: ./tests/fixtures
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -30,9 +30,9 @@ jobs:
     env:
       REPO_ROOT: ./tests/fixtures
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -44,7 +44,7 @@ jobs:
         env:
           REPO_ROOT: ./tests/fixtures
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: playwright-report
