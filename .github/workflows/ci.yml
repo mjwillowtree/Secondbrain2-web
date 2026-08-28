@@ -116,7 +116,7 @@ jobs:
 
       - name: Post review comment
         if: env.ANTHROPIC_API_KEY != '' && steps.review.outcome == 'success'
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           header: design-review
           path: design-review-output.md
